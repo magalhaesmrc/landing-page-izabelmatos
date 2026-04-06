@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Dra. Izabel Matos | Psicóloga Especialista em TCC</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefef7;
+            color: #1e2a2f;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* cabeçalho / nav */
+        .navbar {
+            background: #ffffffea;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #e2e8e6;
+            padding: 16px 0;
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #2b6e4f, #4b9b7a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .logo p {
+            font-size: 0.8rem;
+            color: #4b6a5c;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2c423b;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #2b6e4f;
+        }
+
+        .btn-contato-nav {
+            background: #2b6e4f;
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 40px;
+        }
+
+        .btn-contato-nav:hover {
+            background: #1f543d;
+        }
+
+        /* hero */
+        .hero {
+            padding: 80px 0 60px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .hero-badge {
+            background: #e1f5ed;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #1b5e3f;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #1e2a2f;
+        }
+
+        .hero-content h1 span {
+            color: #2b6e4f;
+            border-bottom: 3px solid #cbdcd4;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #3e5a50;
+            margin-bottom: 32px;
+            max-width: 550px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #2b6e4f;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background: #1f543d;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #2b6e4f;
+            color: #2b6e4f;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-outline:hover {
+            background: #eef7f2;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 40px;
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.15);
+            background: #e6f0ec;
+            width: 380px;
+            object-fit: cover;
+        }
+
+        /* seções */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-light {
+            background-color: #f9faf8;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1e2a2f;
+        }
+
+        .section-sub {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 56px auto;
+            color: #4f6a5f;
+            font-size: 1.1rem;
+        }
+
+        /* cards sobre TCC */
+        .grid-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 32px 24px;
+            flex: 1;
+            min-width: 240px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            transition: all 0.25s;
+            border: 1px solid #e4ece8;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+            border-color: #cde3da;
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: #2b6e4f;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #436155;
+        }
+
+        /* sobre a profissional */
+        .about-wrap {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1.2;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #1f543d;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+            color: #2f4d41;
+        }
+
+        .badge-credencial {
+            display: flex;
+            gap: 20px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .badge-credencial span {
+            background: #eef3f0;
+            padding: 8px 18px;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .about-img {
+            flex: 0.8;
+            text-align: center;
+        }
+
+        .about-img img {
+            width: 280px;
+            border-radius: 40px;
+            box-shadow: 0 18px 28px -12px rgba(0,0,0,0.1);
+        }
+
+        /* serviços */
+        .servicos-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .servico-item {
+            background: white;
+            border-radius: 28px;
+            padding: 30px 20px;
+            flex: 1 1 260px;
+            text-align: center;
+            transition: all 0.2s;
+            border: 1px solid #e7efeb;
+        }
+
+        .servico-item i {
+            font-size: 2.2rem;
+            background: #e6f0eb;
+            padding: 16px;
+            border-radius: 60px;
+            color: #2b6e4f;
+            margin-bottom: 20px;
+        }
+
+        /* contato/agendamento */
+        .contact-box {
+            background: #eef4f1;
+            border-radius: 48px;
+            padding: 48px 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            justify-content: space-between;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-detail {
+            margin: 24px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1rem;
+        }
+
+        .contact-detail i {
+            font-size: 1.5rem;
+            width: 40px;
+            color: #2b6e4f;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .social-links a {
+            background: white;
+            width: 44px;
+            height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            color: #2b6e4f;
+            font-size: 1.3rem;
+            transition: 0.2s;
+        }
+
+        .social-links a:hover {
+            background: #2b6e4f;
+            color: white;
+        }
+
+        .contact-form {
+            flex: 1;
+            background: white;
+            padding: 32px;
+            border-radius: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #cfdfd8;
+            border-radius: 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            background: #fff;
+            transition: 0.2s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #2b6e4f;
+            box-shadow: 0 0 0 3px #cfe9e0;
+        }
+
+        button[type="submit"] {
+            background: #2b6e4f;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 40px;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .whatsapp-fixed {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+            transition: 0.2s;
+            z-index: 99;
+        }
+
+        .whatsapp-fixed:hover {
+            background: #1da35e;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #1e2a2f;
+            color: #cddfd8;
+            text-align: center;
+            padding: 32px 0;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 850px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .nav-flex { justify-content: center; }
+            .hero { flex-direction: column-reverse; text-align: center; }
+            .hero-content p { margin-left: auto; margin-right: auto; }
+            .hero-buttons { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navegação -->
+<div class="navbar">
+    <div class="container nav-flex">
+        <div class="logo">
+            <h2>Dra. Izabel Matos</h2>
+            <p>Psicóloga CRP 03/28954</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#tcc">TCC</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#contato" class="btn-contato-nav">Agendar</a></li>
+        </ul>
+    </div>
+</div>
+
+<main>
+    <!-- Hero / Início -->
+    <section id="inicio">
+        <div class="container hero">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-brain"></i> Terapia baseada em evidências</div>
+                <h1>Cuide da sua mente com <span>Terapia Cognitivo-Comportamental</span></h1>
+                <p>Autoconhecimento, acolhimento e ferramentas práticas para transformar seus pensamentos e emoções. Vamos juntos construir uma vida mais leve e significativa.</p>
+                <div class="hero-buttons">
+                    <a href="#contato" class="btn-primary"><i class="fab fa-whatsapp"></i> Fale comigo</a>
+                    <a href="#sobre" class="btn-outline"><i class="fas fa-chevron-circle-right"></i> Conheça meu trabalho</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- imagem ilustrativa de terapia / consultório -->
+                <img src="https://placehold.co/600x500/e6f0ec/2b6e4f?text=Consultório+%26+Escuta+Ativa" alt="Sala de terapia aconchegante">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: O que é TCC -->
+    <section id="tcc" class="section-light">
+        <div class="container">
+            <h2 class="section-title">Terapia Cognitivo-Comportamental (TCC)</h2>
+            <p class="section-sub">Abordagem prática, focada no presente e com resultados cientificamente comprovados para ansiedade, depressão e desafios do dia a dia.</p>
+            <div class="grid-cards">
+                <div class="card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Identifique padrões</h3>
+                    <p>Ajudamos a reconhecer pensamentos automáticos negativos que geram sofrimento emocional.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <h3>Ferramentas práticas</h3>
+                    <p>Exercícios e estratégias para modificar comportamentos e responder de forma mais saudável.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Foco em resultados</h3>
+                    <p>Metas claras e mensuráveis, para que você perceba sua evolução a cada sessão.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre a psicóloga -->
+    <section id="sobre">
+        <div class="container about-wrap">
+            <div class="about-text">
+                <h3>Dra. Izabel Matos Oliveira</h3>
+                <p><strong>CRP 03/28954</strong> | Especialista em TCC pelo Instituto Cognitivo de Terapias. Atendo adultos e adolescentes com foco em transtornos de ansiedade, depressão, síndrome do pânico, TOC e dificuldades nos relacionamentos.</p>
+                <p>Acredito que a relação terapêutica é a base da transformação. Ofereço um espaço seguro, sem julgamentos, onde você pode se conhecer profundamente e desenvolver autonomia emocional. Minha abordagem é ativa e colaborativa, respeitando seu ritmo e história de vida.</p>
+                <div class="badge-credencial">
+                    <span><i class="fas fa-check-circle"></i> +8 anos de experiência</span>
+                    <span><i class="fas fa-certificate"></i> Especialização em Neurociências</span>
+                    <span><i class="fas fa-calendar-alt"></i> Atendimento online e presencial</span>
+                </div>
+            </div>
+            <div class="about-img">
+                <img src="https://placehold.co/400x500/eef4f1/2b6e4f?text=Foto+Profissional" alt="Foto Dra. Izabel Matos">
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços oferecidos -->
+    <section id="servicos" class="section-light">
+        <div class="container">
+            <h2 class="section-title">Como posso te ajudar</h2>
+            <p class="section-sub">Atendimento personalizado, online (em todo Brasil) ou presencial em consultório aconchegante.</p>
+            <div class="servicos-grid">
+                <div class="servico-item">
+                    <i class="fas fa-frown-open"></i>
+                    <h3>Ansiedade & Pânico</h3>
+                    <p>Aprenda a lidar com crises, reduzir sintomas físicos e retomar o controle.</p>
+                </div>
+                <div class="servico-item">
+                    <i class="fas fa-cloud-rain"></i>
+                    <h3>Depressão</h3>
+                    <p>Reconstrução da motivação, ativação comportamental e resgate do prazer nas atividades.</p>
+                </div>
+                <div class="servico-item">
+                    <i class="fas fa-heart-broken"></i>
+                    <h3>Relacionamentos</h3>
+                    <p>Habilidades sociais, assertividade, autoestima e vínculos mais saudáveis.</p>
+                </div>
+                <div class="servico-item">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Regulação emocional</h3>
+                    <p>Controle da impulsividade, frustração e construção de resiliência.</p>
+                </div>
+                <div class="servico-item">
+                    <i class="fas fa-chalkboard-user"></i>
+                    <h3>Terapia para adolescentes</h3>
+                    <p>Suporte emocional para jovens diante de pressões escolares e sociais.</p>
+                </div>
+                <div class="servico-item">
+                    <i class="fas fa-laptop-medical"></i>
+                    <h3>Atendimento online</h3>
+                    <p>Conforto e segurança de qualquer lugar, com a mesma qualidade da terapia presencial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato + Agendamento -->
+    <section id="contato">
+        <div class="container">
+            <div class="contact-box">
+                <div class="contact-info">
+                    <h3>Vamos conversar?</h3>
+                    <p>O primeiro passo é o mais importante. Agende sua sessão inicial e conheça como a TCC pode transformar sua relação com seus pensamentos.</p>
+                    <div class="contact-detail">
+                        <i class="fab fa-whatsapp"></i> <span>(11) 98765-4321</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="far fa-envelope"></i> <span>contato@draanabeatriz.psi.br</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i> <span>Av. Paulista, 1000 - Bela Vista, SP | Online para todo Brasil</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 20px;">Solicite uma pré-consulta</h3>
+                    <form id="formAgendamento">
+                        <div class="form-group">
+                            <input type="text" placeholder="Seu nome completo" id="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Melhor e-mail" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="WhatsApp com DDD" id="telefone" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="interesse">
+                                <option value="">Principal motivo do contato</option>
+                                <option>Ansiedade / Estresse</option>
+                                <option>Depressão / Tristeza profunda</option>
+                                <option>Dificuldades em relacionamentos</option>
+                                <option>Terapia para adolescente</option>
+                                <option>Outros / Quero conhecer a TCC</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="3" placeholder="Conte brevemente o que você está sentindo (opcional)" id="mensagem"></textarea>
+                        </div>
+                        <button type="submit" id="btnEnviar"><i class="fab fa-whatsapp"></i> Enviar e receber retorno</button>
+                        <p style="font-size: 0.75rem; margin-top: 12px; text-align: center;">*Reservo até 24h para responder. Seu contato é sigiloso.</p>
+                    </form>
+                    <div id="formFeedback" style="margin-top: 15px; font-size: 0.85rem; text-align: center;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2025 Dra. Izabel Matos Oliveira – Psicóloga CRP 03/28954 | Terapia Cognitivo-Comportamental</p>
+        <p style="margin-top: 8px;">💙 Cuide da sua mente com ciência e acolhimento. Atendimento ético e sigiloso.</p>
+    </div>
+</footer>
+
+<!-- Botão flutuante WhatsApp -->
+<a href="https://wa.me/5511987654321?text=Olá%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Terapia%20TCC" class="whatsapp-fixed" target="_blank" rel="noopener">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+    (function() {
+        const form = document.getElementById('formAgendamento');
+        const feedbackDiv = document.getElementById('formFeedback');
+        
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const nome = document.getElementById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const telefone = document.getElementById('telefone').value.trim();
+            const interesse = document.getElementById('interesse').value;
+            const mensagem = document.getElementById('mensagem').value;
+            
+            if(!nome || !email || !telefone || !interesse) {
+                feedbackDiv.innerHTML = '<span style="color:#c24a2f;">⚠️ Preencha nome, e-mail, telefone e o motivo de contato.</span>';
+                return;
+            }
+            
+            const botao = document.getElementById('btnEnviar');
+            const textoOriginal = botao.innerHTML;
+            botao.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Enviando...';
+            botao.disabled = true;
+            
+            // Simulação de envio (integração com WhatsApp via redirecionamento simulada, mas aqui apenas demonstração)
+            // Para uso real, integraria com API ou redirecionar para WhatsApp com os dados.
+            // Como é uma landing page estática, faremos um feedback amigável e sugestão de redirecionamento.
+            setTimeout(() => {
+                const textoWhats = `Olá Dra. Izabel Matos, meu nome é ${nome}. Gostaria de agendar uma conversa sobre: ${interesse}. Telefone: ${telefone} | E-mail: ${email}. Mensagem: ${mensagem.substring(0, 150)}`;
+                const url = `https://wa.me/5511987654321?text=${encodeURIComponent(textoWhats)}`;
+                window.open(url, '_blank');
+                
+                feedbackDiv.innerHTML = '<span style="color:#1f543d;">✅ Mensagem direcionada! Você será redirecionado ao WhatsApp. Em breve retornarei seu contato.</span>';
+                form.reset();
+                botao.innerHTML = textoOriginal;
+                botao.disabled = false;
+                setTimeout(() => {
+                    feedbackDiv.innerHTML = '';
+                }, 7000);
+            }, 600);
+        });
+    })();
+</script>
+</body>
+</html>
