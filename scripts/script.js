@@ -26,7 +26,7 @@
         
         // --- CONFIGURAÇÕES DO WHATSAPP ---        
         const numeroWhatsApp = '5573981879728'; // Formato: 55 + DDD + número
-        const numeroWhatsApp2 = '5573988329508'; // Formato: 55 + DDD + número
+        const numeroWhatsAppTest = '5573988329508'; // Formato: 55 + DDD + número
         // Monta a mensagem com formatação amigável
         const textoMensagem = `*🧠 NOVO CONTATO DO SITE*%0A%0A` +
             `*Nome:* ${nome}%0A` +
@@ -37,7 +37,7 @@
             `🔹 Enviado automaticamente pelo formulário do site.`;
         
         // Cria o link do WhatsApp
-        const url = `https://wa.me/${numeroWhatsApp2}?text=${textoMensagem}`;
+        const url = `https://wa.me/${numeroWhatsApp}?text=${textoMensagem}`;
         
         // Abre o WhatsApp (funciona no celular e no WhatsApp Web)
         window.open(url, '_blank');
