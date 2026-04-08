@@ -159,7 +159,7 @@
      */
     function calcularTamanhoMensagemWhatsApp(dados) {
         // Template da mensagem (sem os valores dinâmicos)
-        const template = `*🧠 UM NOVO INTERESSADO NA PSICOTERAPIA ENTROU EM CONTATO ATRAVÉS DO SITE*%0A%0A` +
+        const template = `*🧠 Olá Izabel, estou entrando em contato através do site para conversarmos sobre a psicoterapia*%0A%0A` +
             `*Nome:* ${dados.nome}%0A` +
             `*E-mail:* ${dados.email}%0A` +
             `*Telefone:* ${dados.telefone}%0A` +
@@ -465,7 +465,7 @@
         const numeroWhatsApp = '5573981879728'; // Formato: 55 + DDD + número        
         
         // Monta a mensagem com formatação amigável
-        const textoMensagemWhats = `*🧠 UM NOVO INTERESSADO NA PSICOTERAPIA ENTROU EM CONTATO ATRAVÉS DO SITE*%0A%0A` +
+        const textoMensagemWhats = `*🧠 Olá Izabel, estou entrando em contato através do site para conversarmos sobre a psicoterapia*%0A%0A` +
             `*Nome:* ${nome}%0A` +
             `*E-mail:* ${email}%0A` +
             `*Telefone:* ${telefoneValidado.formatted}%0A` +
