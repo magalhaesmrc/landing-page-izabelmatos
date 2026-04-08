@@ -514,4 +514,39 @@
             feedbackDiv.innerHTML = '';
         }, 8000);
     });
+
+    // === FAQ ACCORDION ===
+    function initFaq() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        if (faqItems.length === 0) return;
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Fecha todos os outros itens (comportamento de accordion)
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Alterna o item atual
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Opcional: Abre o primeiro item por padrão (descomente se quiser)
+        // if (faqItems.length > 0) {
+        //     faqItems[0].classList.add('active');
+        // }
+    }
+    
+    // Inicializa o FAQ quando o DOM estiver pronto
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFaq);
+    } else {
+        initFaq();
+    }
 })();
