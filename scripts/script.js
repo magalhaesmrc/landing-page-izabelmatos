@@ -537,7 +537,7 @@
             });
         });
         
-        // Opcional: Abre o primeiro item por padrão (descomente se quiser)
+        // Abre o primeiro item por padrão
         // if (faqItems.length > 0) {
         //     faqItems[0].classList.add('active');
         // }
