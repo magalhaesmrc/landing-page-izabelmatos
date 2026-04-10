@@ -549,4 +549,48 @@
     } else {
         initFaq();
     }
+
+    /***********/
+    // === ANO CORRENTE VIA API EXTERNA (WorldTimeAPI) ===
+    async function obterAnoViaAPI() {
+        const anoElement = document.getElementById('anoAtual');
+        if (!anoElement) return;
+        
+        // Exibe "carregando..." enquanto busca o ano
+        anoElement.textContent = '...';
+        
+        try {
+            // Faz a requisição para a API de horário de Brasília
+            const resposta = await fetch('https://worldtimeapi.org/api/timezone/America/Sao_Paulo');
+            
+            // Verifica se a requisição foi bem-sucedida
+            if (!resposta.ok) {
+                throw new Error(`Erro HTTP: ${resposta.status}`);
+            }
+            
+            const dados = await resposta.json();
+            const dataServidor = new Date(dados.datetime);
+            const anoAtual = dataServidor.getFullYear();
+            
+            // Insere o ano no elemento
+            anoElement.textContent = anoAtual;
+            
+        } catch (erro) {
+            console.error('Erro ao obter ano da API:', erro);
+            
+            // Fallback: usa o ano do computador do usuário se a API falhar
+            const anoFallback = new Date().getFullYear();
+            anoElement.textContent = anoFallback;
+            console.log(`Usando ano do navegador como fallback: ${anoFallback}`);
+        }
+    }
+    
+    // Executa a função quando a página carregar
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', obterAnoViaAPI);
+    } else {
+        obterAnoViaAPI();
+    }
+    /***********/
+    
 })();
