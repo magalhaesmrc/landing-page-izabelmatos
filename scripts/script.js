@@ -550,45 +550,45 @@
         initFaq();
     }
     
-    // === ANO CORRENTE VIA API EXTERNA (WorldTimeAPI) ===
+    // === ANO CORRENTE VIA API EXTERNA ===
     async function obterAnoViaAPI() {
         const anoElement = document.getElementById('anoAtual');
         if (!anoElement) return;
         
-        // Exibe "carregando..." enquanto busca o ano
-        anoElement.textContent = '...';
+        // Exibe fallback imediato enquanto carrega
+        anoElement.textContent = new Date().getFullYear();
         
         try {
-            // Faz a requisição para a API de horário de Brasília
-            const resposta = await fetch('https://worldtimeapi.org/api/timezone/America/Sao_Paulo');
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 segundos de timeout
             
-            // Verifica se a requisição foi bem-sucedida
+            const resposta = await fetch('https://worldtimeapi.org/api/timezone/America/Sao_Paulo', {
+                signal: controller.signal
+            });
+            
+            clearTimeout(timeoutId);
+            
             if (!resposta.ok) {
-                throw new Error(`Erro HTTP: ${resposta.status}`);
+                throw new Error(`HTTP ${resposta.status}`);
             }
             
             const dados = await resposta.json();
-            const dataServidor = new Date(dados.datetime);
-            const anoAtual = dataServidor.getFullYear();
-            
-            // Insere o ano no elemento
+            const anoAtual = new Date(dados.datetime).getFullYear();
             anoElement.textContent = anoAtual;
             
-        } catch (erro) {
-            console.error('Erro ao obter ano da API:', erro);
+            console.log('✅ Ano obtido da API:', anoAtual);
             
-            // Fallback: usa o ano do computador do usuário se a API falhar
-            const anoFallback = new Date().getFullYear();
-            anoElement.textContent = anoFallback;
-            console.log(`Usando ano do navegador como fallback: ${anoFallback}`);
+        } catch (erro) {
+            console.warn('⚠️ API falhou, usando ano do cliente:', erro.message);
+            // O fallback já está em exibição, nada mais a fazer
         }
     }
     
-    // Executa a função quando a página carregar
+    // Executa quando o DOM estiver carregado
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', obterAnoViaAPI);
     } else {
         obterAnoViaAPI();
-    }   
+    }
     
 })();
