@@ -549,8 +549,7 @@
     } else {
         initFaq();
     }
-
-    /***********/
+    
     // === ANO CORRENTE VIA API EXTERNA (WorldTimeAPI) ===
     async function obterAnoViaAPI() {
         const anoElement = document.getElementById('anoAtual');
@@ -590,7 +589,6 @@
         document.addEventListener('DOMContentLoaded', obterAnoViaAPI);
     } else {
         obterAnoViaAPI();
-    }
-    /***********/
+    }   
     
 })();
